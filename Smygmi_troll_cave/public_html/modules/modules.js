@@ -1,0 +1,1 @@
+var module = angular.module('villen_sivu', ['ngRoute', 'ngResource']);

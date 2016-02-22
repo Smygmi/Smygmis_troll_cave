@@ -1,16 +1,68 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en" ng-app='villen_sivu'>
+	
+		<head>
+			<meta charset="utf-8"> 
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+			<script src="lib/angular.min.js"></script>
+			<script src="modules/modules.js"></script>
+			<script src="lib/angular-route.min.js"></script>
+			<script src="lib/angular-resource.min.js"></script>
+			<script src="js/english.js"></script>
+			<script src="js/main_controller.js"></script>
+		
+	
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+			
+			<div ng-controller="Controller">
+				<title>{{ languages.title }}</title>
+			</div>
+		</head>
+	
+		<body>
+			<div class="container"  ng-controller="Controller">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-10">
+							<h1 class="bg-primary">{{ languages.title }}</h1>
+							<p class="text-info">{{ languages.mainHeader }}</p>
+						</div>
+						<div class="col-md-2"><img src="images/profiili.jpg" class="img-rounded" alt="Cinque Terre" width="140" height="140"></div>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-4"><a class="bg-info" ng-click="etusivu()">{{languages.frontPage}}</a></div>
+					<div class="col-md-4"><a class="bg-info" ng-click="ohjelmointi()">{{languages.programmingPage}}</a></div>
+					<div class="col-md-4"><a class="bg-info" ng-click="harrastus()">{{languages.hobbyPage}}</a></div>
+				
+				</div>
+			
+			
+			
+				<div class="row">
+					<div class="col-md-12">
+						<div ng-view></div>
+					</div>
+				</div>
+				
+				<div class="well well-sm">
+					<div class="row">
+						<div class="col-md-4">
+							<p class="text-info" ng-click="languageSelect(1)">English</p>
+						</div>
+						<div class="col-md-4">
+							<p class="text-info" ng-click="languageSelect(2)">Finnish</p>
+						</div>
+						<div class="col-md-4">
+							<p class="text-info" ng-click="languageSelect(3)">Swedish</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+	
 </html>
